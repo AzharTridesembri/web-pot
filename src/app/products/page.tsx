@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 // Data produk (nanti bisa dipindahkan ke file terpisah)
@@ -190,8 +189,6 @@ const products = [
 ];
 
 export default function ProductsPage() {
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -242,8 +239,6 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                onHoverStart={() => setHoveredProduct(product.id)}
-                onHoverEnd={() => setHoveredProduct(null)}
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
               >
                 <div className="relative h-72 overflow-hidden">
