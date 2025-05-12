@@ -6,193 +6,90 @@ import Image from "next/image";
 const products = [
   {
     id: 1,
-    name: "Traditional Clay Pot",
-    description:
-      "Handcrafted traditional clay pot, perfect for plants and decoration",
-    price: "$15",
-    image: "/images/products/pot-1.jpg",
-    category: "Traditional",
-    size: "Medium",
-    color: "Terracotta",
-    rating: 4.8,
-    reviews: 24,
+    name: "Pot Beton Modern",
+    description: "Desain modern dengan finishing halus dan tahan lama",
+    price: "Rp 150.000",
+    image: "/images/products/potterazzo.jpeg",
+    category: "Modern",
+    size: "Diameter 30cm x Tinggi 40cm",
+    weight: "5kg",
+    material: "Beton",
+    color: "Abu-abu",
+    finishing: "Doff",
   },
   {
     id: 2,
-    name: "Modern Ceramic Vase",
-    description: "Contemporary ceramic vase with unique glaze finish",
-    price: "$25",
-    image: "/images/products/pot-2.jpg",
-    category: "Modern",
-    size: "Large",
-    color: "White",
-    rating: 4.9,
-    reviews: 18,
+    name: "Pot Beton Klasik",
+    description: "Gaya klasik dengan detail yang elegan",
+    price: "Rp 175.000",
+    image: "/images/products/pot2.jpeg",
+    category: "Klasik",
+    size: "Diameter 25cm x Tinggi 35cm",
+    weight: "4kg",
+    material: "Beton",
+    color: "Abu-abu Natural",
+    finishing: "Doff",
   },
   {
     id: 3,
-    name: "Rustic Plant Pot",
-    description: "Rustic style plant pot with natural texture and finish",
-    price: "$18",
-    image: "/images/products/pot-3.jpg",
-    category: "Rustic",
-    size: "Small",
-    color: "Brown",
-    rating: 4.7,
-    reviews: 32,
+    name: "Pot Beton Minimalis",
+    description: "Desain minimalis yang cocok untuk berbagai ruangan",
+    price: "Rp 125.000",
+    image: "/images/products/pot3.jpeg",
+    category: "Minimalis",
+    size: "Diameter 20cm x Tinggi 25cm",
+    weight: "3kg",
+    material: "Beton",
+    color: "Abu-abu Muda",
+    finishing: "Doff",
   },
   {
     id: 4,
-    name: "Decorative Ceramic Bowl",
-    description: "Beautiful decorative bowl with intricate patterns",
-    price: "$20",
-    image: "/images/products/pot-4.jpg",
-    category: "Decorative",
-    size: "Medium",
-    color: "Blue",
-    rating: 4.6,
-    reviews: 15,
+    name: "Pot Beton Artistik",
+    description: "Karya seni yang dapat menjadi pusat perhatian",
+    price: "Rp 200.000",
+    image: "/images/products/pot4.jpeg",
+    category: "Artistik",
+    size: "Diameter 35cm x Tinggi 45cm",
+    weight: "6kg",
+    material: "Beton",
+    color: "Abu-abu Tua",
+    finishing: "Tekstur",
   },
   {
     id: 5,
-    name: "Minimalist Planter",
-    description: "Clean and simple design perfect for modern homes",
-    price: "$17.50",
-    image: "/images/products/pot-5.jpg",
-    category: "Modern",
-    size: "Small",
-    color: "Gray",
-    rating: 4.9,
-    reviews: 27,
+    name: "Pot Beton Kontemporer",
+    description: "Desain kontemporer dengan sentuhan modern",
+    price: "Rp 180.000",
+    image: "/images/products/pot5.jpeg",
+    category: "Kontemporer",
+    size: "Diameter 28cm x Tinggi 38cm",
+    weight: "4.5kg",
+    material: "Beton",
+    color: "Abu-abu",
+    finishing: "Polish",
   },
   {
     id: 6,
-    name: "Artistic Ceramic Pot",
-    description: "Unique artistic design with hand-painted details",
-    price: "$30",
-    image: "/images/products/pot-6.jpg",
-    category: "Artistic",
-    size: "Large",
-    color: "Multicolor",
-    rating: 5.0,
-    reviews: 42,
-  },
-  {
-    id: 7,
-    name: "Japanese Style Teapot",
-    description: "Elegant Japanese-inspired teapot with traditional patterns",
-    price: "$28",
-    image: "/images/products/pot-7.jpg",
-    category: "Traditional",
-    size: "Medium",
-    color: "Black",
-    rating: 4.9,
-    reviews: 35,
-  },
-  {
-    id: 8,
-    name: "Geometric Planter Set",
-    description: "Modern geometric design planter set, perfect for succulents",
-    price: "$22",
-    image: "/images/products/pot-8.jpg",
-    category: "Modern",
-    size: "Small",
-    color: "White",
-    rating: 4.8,
-    reviews: 29,
-  },
-  {
-    id: 9,
-    name: "Hand-Painted Flower Vase",
-    description: "Beautiful flower vase with hand-painted floral motifs",
-    price: "$32",
-    image: "/images/products/pot-9.jpg",
-    category: "Artistic",
-    size: "Large",
-    color: "Multicolor",
-    rating: 4.9,
-    reviews: 38,
-  },
-  {
-    id: 10,
-    name: "Rattan-Wrapped Pot",
-    description: "Unique rattan-wrapped pot for a rustic feel",
-    price: "$19",
-    image: "/images/products/pot-10.jpg",
-    category: "Rustic",
-    size: "Medium",
-    color: "Brown",
-    rating: 4.7,
-    reviews: 22,
-  },
-  {
-    id: 11,
-    name: "Ceramic Mug Set",
-    description: "Set of 4 handcrafted ceramic mugs with unique designs",
-    price: "$24",
-    image: "/images/products/pot-11.jpg",
-    category: "Modern",
-    size: "Medium",
-    color: "Gray",
-    rating: 4.8,
-    reviews: 45,
-  },
-  {
-    id: 12,
-    name: "Decorative Wall Plate",
-    description: "Large decorative wall plate with traditional patterns",
-    price: "$35",
-    image: "/images/products/pot-12.jpg",
-    category: "Decorative",
-    size: "Large",
-    color: "Blue",
-    rating: 4.9,
-    reviews: 31,
-  },
-  {
-    id: 13,
-    name: "Mini Succulent Pots",
-    description: "Set of 3 mini pots perfect for small succulents",
-    price: "$16",
-    image: "/images/products/pot-13.jpg",
-    category: "Modern",
-    size: "Small",
-    color: "White",
-    rating: 4.7,
-    reviews: 28,
-  },
-  {
-    id: 14,
-    name: "Traditional Water Jug",
-    description: "Classic water jug with traditional design and glaze",
-    price: "$27",
-    image: "/images/products/pot-14.jpg",
-    category: "Traditional",
-    size: "Large",
-    color: "Terracotta",
-    rating: 4.8,
-    reviews: 33,
-  },
-  {
-    id: 15,
-    name: "Artistic Wall Hanging",
-    description: "Unique wall hanging with artistic ceramic elements",
-    price: "$29",
-    image: "/images/products/pot-15.jpg",
-    category: "Artistic",
-    size: "Medium",
-    color: "Multicolor",
-    rating: 4.9,
-    reviews: 26,
+    name: "Pot Beton Tradisional",
+    description: "Gaya tradisional dengan nilai budaya",
+    price: "Rp 160.000",
+    image: "/images/products/pot6.jpeg",
+    category: "Tradisional",
+    size: "Diameter 32cm x Tinggi 42cm",
+    weight: "5.5kg",
+    material: "Beton",
+    color: "Abu-abu Antik",
+    finishing: "Natural",
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-600/90 to-indigo-800/90 z-10" />
+      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-600 to-emerald-700 z-10" />
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -200,8 +97,8 @@ export default function ProductsPage() {
           className="absolute inset-0"
         >
           <Image
-            src="/images/hero-products.jpg"
-            alt="Pottery Collection"
+            src="/images/products-hero.jpg"
+            alt="Products"
             fill
             className="object-cover"
             priority
@@ -211,74 +108,113 @@ export default function ProductsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Our Collection
+            Produk Kami
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto"
+            className="text-lg text-teal-50 max-w-2xl mx-auto"
           >
-            Discover our handcrafted pottery pieces, each telling a unique story
-            of tradition and creativity
+            Temukan koleksi pot beton berkualitas tinggi dengan desain unik
           </motion.p>
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Section */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Koleksi Terbaik
+            </h2>
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
+              Setiap pot dibuat dengan teliti untuk memberikan kualitas terbaik
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
+            {products.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-64">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="object-contain p-4"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors">
-                      View Details
-                    </button>
-                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-slate-900">
                       {product.name}
                     </h3>
-                    <span className="text-lg font-bold text-indigo-600">
-                      {product.price}
+                    <span className="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">
+                      {product.category}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-yellow-400">★</span>
-                      <span className="text-gray-600">
-                        {product.rating} ({product.reviews} reviews)
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-gray-500 text-sm">
-                        {product.size}
-                      </span>
-                      <span className="text-gray-500 text-sm">•</span>
-                      <span className="text-gray-500 text-sm">
-                        {product.color}
-                      </span>
-                    </div>
+                  <p className="text-slate-600 mb-4">{product.description}</p>
+                  <div className="text-sm text-slate-600 mb-2">
+                    <span className="font-semibold">Ukuran:</span>{" "}
+                    {product.size}
+                  </div>
+                  <div className="text-sm text-slate-600 mb-2">
+                    <span className="font-semibold">Berat:</span>{" "}
+                    {product.weight}
+                  </div>
+                  <div className="text-sm text-slate-600 mb-2">
+                    <span className="font-semibold">Material:</span>{" "}
+                    {product.material}
+                  </div>
+                  <div className="text-sm text-slate-600 mb-2">
+                    <span className="font-semibold">Warna:</span>{" "}
+                    {product.color}
+                  </div>
+                  <div className="text-sm text-slate-600 mb-4">
+                    <span className="font-semibold">Finishing:</span>{" "}
+                    {product.finishing}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xl font-bold text-teal-700">
+                      {product.price}
+                    </span>
+                    <a
+                      href={`https://wa.me/6283890558686?text=${encodeURIComponent(
+                        `Halo admin, saya ingin memesan ${product.name} seharga ${product.price} (Ukuran: ${product.size}, Berat: ${product.weight}, Material: ${product.material}, Warna: ${product.color}, Finishing: ${product.finishing}). Berikut gambar produk: https://potrachmad.vercel.com${product.image}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-lg font-medium shadow hover:from-teal-700 hover:to-emerald-700 transition-all"
+                    >
+                      Pesan Sekarang
+                      <svg
+                        className="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 10.5a8.38 8.38 0 01-.9 3.8l-1.1 2.2a2 2 0 01-1.8 1.1H7.7a2 2 0 01-1.8-1.1l-1.1-2.2A8.38 8.38 0 014 10.5V7a2 2 0 012-2h12a2 2 0 012 2v3.5z"
+                        />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </motion.div>

@@ -28,10 +28,10 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-600/90 to-indigo-800/90 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-600/90 to-emerald-700/90 z-10" />
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -52,41 +52,41 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Contact Us
+            Hubungi Kami
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto"
+            className="text-xl text-slate-200 max-w-2xl mx-auto"
           >
-            Get in touch with us for any inquiries about our pottery pieces
+            Hubungi kami untuk informasi lebih lanjut tentang produk dan layanan
+            kami
           </motion.p>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-lg p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Send us a Message
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Kirim Pesan
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-slate-700 mb-1"
                   >
-                    Your Name
+                    Nama
                   </label>
                   <input
                     type="text"
@@ -94,17 +94,16 @@ export default function ContactPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-slate-700 mb-1"
                   >
-                    Email Address
+                    Email
                   </label>
                   <input
                     type="email"
@@ -112,17 +111,16 @@ export default function ContactPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="john@example.com"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-slate-700 mb-1"
                   >
-                    Subject
+                    Subjek
                   </label>
                   <input
                     type="text"
@@ -130,35 +128,35 @@ export default function ContactPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="How can we help?"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-slate-700 mb-1"
                   >
-                    Message
+                    Pesan
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Your message here..."
+                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    required
                   />
                 </div>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300"
+                  className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-teal-700 hover:to-emerald-700 transition-all shadow-lg"
                 >
-                  Send Message
-                </button>
+                  Kirim Pesan
+                </motion.button>
               </form>
             </motion.div>
 
@@ -166,19 +164,18 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="space-y-8"
             >
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Contact Information
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  Informasi Kontak
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <svg
-                        className="w-6 h-6 text-indigo-600"
+                        className="w-6 h-6 text-teal-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -198,51 +195,18 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900">
-                        Address
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        Alamat
                       </h3>
-                      <p className="mt-1 text-gray-600">
-                        123 Pottery Street
-                        <br />
-                        Artisan District
-                        <br />
-                        City, Country 12345
+                      <p className="text-slate-600">
+                        Jl. Contoh No. 123, Kota, Provinsi
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <svg
-                        className="w-6 h-6 text-indigo-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-900">
-                        Email
-                      </h3>
-                      <p className="mt-1 text-gray-600">
-                        info@potteryworkshop.com
-                        <br />
-                        support@potteryworkshop.com
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <svg
-                        className="w-6 h-6 text-indigo-600"
+                        className="w-6 h-6 text-teal-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -256,40 +220,58 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900">
-                        Phone
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        Telepon
                       </h3>
-                      <p className="mt-1 text-gray-600">
-                        +1 (555) 123-4567
-                        <br />
-                        +1 (555) 987-6543
-                      </p>
+                      <p className="text-slate-600">+62 123 4567 890</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-6 h-6 text-teal-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        Email
+                      </h3>
+                      <p className="text-slate-600">info@rachmadpot.com</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Business Hours */}
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Business Hours
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                  Jam Operasional
                 </h2>
                 <div className="space-y-4">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday</span>
-                    <span className="text-gray-900 font-medium">
-                      9:00 AM - 6:00 PM
+                    <span className="text-slate-600">Senin - Jumat</span>
+                    <span className="text-slate-900 font-medium">
+                      09:00 - 18:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Saturday</span>
-                    <span className="text-gray-900 font-medium">
-                      10:00 AM - 4:00 PM
+                    <span className="text-slate-600">Sabtu</span>
+                    <span className="text-slate-900 font-medium">
+                      10:00 - 16:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Sunday</span>
-                    <span className="text-gray-900 font-medium">Closed</span>
+                    <span className="text-slate-600">Minggu</span>
+                    <span className="text-slate-900 font-medium">Tutup</span>
                   </div>
                 </div>
               </div>

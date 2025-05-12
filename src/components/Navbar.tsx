@@ -18,6 +18,7 @@ const Navbar = () => {
   const menuItems = [
     { title: "Home", href: "/" },
     { title: "Products", href: "/products" },
+    { title: "Our Service", href: "/service" },
     { title: "Gallery", href: "/gallery" },
     { title: "About", href: "/about" },
     { title: "Contact", href: "/contact" },
@@ -41,8 +42,8 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Rachmad Pot
+              <span className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                POT RACHMAD
               </span>
             </Link>
           </motion.div>
@@ -59,10 +60,10 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="relative px-2 py-1.5 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors duration-200 group"
+                    className="relative px-2 py-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors duration-200 group"
                   >
                     {item.title}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                   </Link>
                 </motion.div>
               ))}
@@ -74,7 +75,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-1.5 rounded-full text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none transition-colors duration-200"
+              className="inline-flex items-center justify-center p-1.5 rounded-full text-slate-700 hover:text-teal-600 hover:bg-slate-100 focus:outline-none transition-colors duration-200"
             >
               <span className="sr-only">Open main menu</span>
               <AnimatePresence mode="wait">
@@ -143,7 +144,7 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200"
+                    className="block px-3 py-1.5 rounded-md text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}

@@ -106,10 +106,10 @@ export default function GalleryPage() {
       : galleryItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-600/90 to-indigo-800/90 z-10" />
+      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-600 to-emerald-700 z-10" />
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -128,18 +128,18 @@ export default function GalleryPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Our Gallery
+            Galeri Kami
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto"
+            className="text-lg text-teal-50 max-w-2xl mx-auto"
           >
-            Explore our collection of handcrafted pottery pieces through our
-            gallery
+            Jelajahi koleksi pot beton kami yang menggabungkan keindahan dan
+            fungsionalitas
           </motion.p>
         </div>
       </section>
@@ -154,7 +154,7 @@ export default function GalleryPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedCategory === category
-                    ? "bg-indigo-600 text-white shadow-lg"
+                    ? "bg-teal-600 text-white shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -166,35 +166,44 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Koleksi Terbaik
+            </h2>
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
+              Setiap pot menceritakan kisah unik tentang desain dan kreativitas
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                className="group relative overflow-hidden rounded-xl shadow-lg"
                 onClick={() => setSelectedImage(item.id)}
               >
-                <div className="relative h-80">
+                <div className="relative h-[300px]">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-200">{item.description}</p>
-                    <span className="inline-block mt-2 px-3 py-1 bg-white/20 text-white text-sm rounded-full backdrop-blur-sm">
-                      {item.category}
-                    </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                    <p className="text-teal-200">{item.category}</p>
                   </div>
                 </div>
               </motion.div>
