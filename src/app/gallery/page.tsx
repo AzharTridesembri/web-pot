@@ -3,207 +3,173 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-// Data gallery (nanti bisa dipindahkan ke file terpisah)
-const galleryItems = [
-  {
-    id: 1,
-    title: "Traditional Pottery Collection",
-    description: "Our finest collection of traditional pottery pieces",
-    image: "/images/gallery/gallery-1.jpg",
-    category: "Traditional",
-  },
-  {
-    id: 2,
-    title: "Modern Ceramic Art",
-    description: "Contemporary ceramic art pieces with unique designs",
-    image: "/images/gallery/gallery-2.jpg",
-    category: "Modern",
-  },
-  {
-    id: 3,
-    title: "Handcrafted Vases",
-    description: "Beautiful handcrafted vases with intricate patterns",
-    image: "/images/gallery/gallery-3.jpg",
-    category: "Vases",
-  },
-  {
-    id: 4,
-    title: "Artistic Pottery",
-    description: "Unique artistic pottery pieces with creative designs",
-    image: "/images/gallery/gallery-4.jpg",
-    category: "Artistic",
-  },
-  {
-    id: 5,
-    title: "Rustic Collection",
-    description: "Rustic style pottery with natural textures",
-    image: "/images/gallery/gallery-5.jpg",
-    category: "Rustic",
-  },
-  {
-    id: 6,
-    title: "Decorative Pieces",
-    description: "Elegant decorative pieces for your home",
-    image: "/images/gallery/gallery-6.jpg",
-    category: "Decorative",
-  },
-  {
-    id: 7,
-    title: "Ceramic Sculptures",
-    description: "Unique ceramic sculptures and art pieces",
-    image: "/images/gallery/gallery-7.jpg",
-    category: "Sculptures",
-  },
-  {
-    id: 8,
-    title: "Traditional Patterns",
-    description: "Traditional patterns and designs in pottery",
-    image: "/images/gallery/gallery-8.jpg",
-    category: "Traditional",
-  },
-  {
-    id: 9,
-    title: "Modern Minimalist",
-    description: "Clean and minimalist ceramic designs",
-    image: "/images/gallery/gallery-9.jpg",
-    category: "Modern",
-  },
-  {
-    id: 10,
-    title: "Colorful Collection",
-    description: "Vibrant and colorful ceramic pieces",
-    image: "/images/gallery/gallery-10.jpg",
-    category: "Colorful",
-  },
-  {
-    id: 11,
-    title: "Nature Inspired",
-    description: "Pottery pieces inspired by natural elements",
-    image: "/images/gallery/gallery-11.jpg",
-    category: "Nature",
-  },
-  {
-    id: 12,
-    title: "Cultural Heritage",
-    description: "Traditional cultural pottery designs",
-    image: "/images/gallery/gallery-12.jpg",
-    category: "Traditional",
-  },
+const categories = [
+  "Semua",
+  "Pot Beton",
+  "Terrazzo",
+  "Wastafel",
+  "Air Mancur",
+  "Bak Mandi",
+  "Batu Stepping",
 ];
 
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState("Semua");
 
-  const categories = [
-    "All",
-    ...new Set(galleryItems.map((item) => item.category)),
+  const images = [
+    // Pot Beton
+    { src: "/images/gallery/potbeton1.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbeton.jpg", category: "Pot Beton" },
+    { src: "/images/gallery/potbeton2.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbeton3.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbeton4.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot1.jpg", category: "Pot Beton" },
+    { src: "/images/gallery/pot2.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot3.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot4.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot5.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot6.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot7.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot8.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot9.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot10.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/pot11.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potpersegi.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potpiala.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potteratai.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbesarpancawarna.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbesarpancawarna1.jpeg", category: "Pot Beton" },
+    { src: "/images/gallery/potbesarpancawarna2.jpeg", category: "Pot Beton" },
+
+    // Terrazzo
+    { src: "/images/gallery/potterazzo3.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/potterazo2.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/potterazo1.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/potterazo4.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/potterazo5.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazo2.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazo4.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam1.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam2.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam3.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam4.jpg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazohitam1.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazobulat.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazobulat-.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazobulat--.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazomen.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/terazo2-.jpeg", category: "Terrazzo" },
+    { src: "/images/gallery/potkerucutterazo.jpg", category: "Terrazzo" },
+
+    // Wastafel
+    { src: "/images/gallery/wastafelterazo.jpg", category: "Wastafel" },
+    { src: "/images/gallery/wastafelterazo2.jpg", category: "Wastafel" },
+    { src: "/images/gallery/wastafelpancawarna.jpeg", category: "Wastafel" },
+    { src: "/images/gallery/wastafelbulatterazo.jpeg", category: "Wastafel" },
+    { src: "/images/gallery/wastafelpanjangterazo.jpeg", category: "Wastafel" },
+    { src: "/images/gallery/wastafelpendekterazo.jpeg", category: "Wastafel" },
+
+    // Air Mancur
+    { src: "/images/gallery/airmancur1.jpg", category: "Air Mancur" },
+    { src: "/images/gallery/airmancur2.jpg", category: "Air Mancur" },
+    { src: "/images/gallery/airmancur4.jpeg", category: "Air Mancur" },
+    { src: "/images/gallery/airmancur5.jpeg", category: "Air Mancur" },
+    { src: "/images/gallery/airmancur6.jpg", category: "Air Mancur" },
+
+    // Bak Mandi
+    { src: "/images/gallery/potterazo-bakmandi.jpeg", category: "Bak Mandi" },
+    { src: "/images/gallery/potterazo-bakmandi1.jpeg", category: "Bak Mandi" },
+    { src: "/images/gallery/potbakmanditerazo.jpg", category: "Bak Mandi" },
+    { src: "/images/gallery/potbakmanditerazo2.jpg", category: "Bak Mandi" },
+    { src: "/images/gallery/potbakmanditerazzo1.jpeg", category: "Bak Mandi" },
+
+    // Batu Stepping
+    {
+      src: "/images/gallery/stepingpancawarna.jpeg",
+      category: "Batu Stepping",
+    },
+    {
+      src: "/images/gallery/stepingpancawarna1.jpeg",
+      category: "Batu Stepping",
+    },
   ];
 
-  const filteredItems =
-    selectedCategory === "All"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === selectedCategory);
+  const filteredImages =
+    selectedCategory === "Semua"
+      ? images
+      : images.filter((image) => image.category === selectedCategory);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-600 to-emerald-700 z-10" />
-        <motion.div
-          initial={{ scale: 1.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0"
-        >
-          <Image
-            src="/images/gallery-hero.jpg"
-            alt="Gallery"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
-        <div className="relative z-20 text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-          >
-            Galeri Kami
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-teal-50 max-w-2xl mx-auto"
-          >
-            Jelajahi koleksi pot beton kami yang menggabungkan keindahan dan
-            fungsionalitas
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-teal-600 text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
+      <section className="relative h-[300px] w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-700">
+          <div className="container mx-auto px-4 h-full flex items-center">
+            <div className="text-white">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl md:text-4xl font-bold mb-3"
               >
-                {category}
-              </button>
-            ))}
+                Galeri Produk
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg md:text-xl text-teal-50"
+              >
+                Koleksi Produk Pot Beton & Terrazzo Berkualitas
+              </motion.p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Gallery Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Koleksi Terbaik
-            </h2>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              Setiap pot menceritakan kisah unik tentang desain dan kreativitas
-            </p>
-          </motion.div>
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full transition-all ${
+                  selectedCategory === category
+                    ? "bg-teal-600 text-white shadow-lg"
+                    : "bg-white text-teal-600 hover:bg-teal-50 border border-teal-200"
+                }`}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item) => (
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredImages.map((image, index) => (
               <motion.div
-                key={item.id}
+                key={image.src}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-xl shadow-lg"
-                onClick={() => setSelectedImage(item.id)}
+                className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                <div className="relative h-[300px]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-teal-200">{item.category}</p>
+                <Image
+                  src={image.src}
+                  alt={image.category}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="font-semibold">{image.category}</p>
                   </div>
                 </div>
               </motion.div>
@@ -211,44 +177,6 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 text-white hover:text-gray-300"
-          >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-          <div className="relative w-full max-w-4xl h-[80vh]">
-            <Image
-              src={
-                galleryItems.find((item) => item.id === selectedImage)?.image ||
-                ""
-              }
-              alt={
-                galleryItems.find((item) => item.id === selectedImage)?.title ||
-                ""
-              }
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-      )}
     </main>
   );
 }

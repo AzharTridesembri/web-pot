@@ -199,7 +199,13 @@ export default function ContactPage() {
                         Alamat
                       </h3>
                       <p className="text-slate-600">
-                        Jl. Contoh No. 123, Kota, Provinsi
+                        Pangkalan Pot Rachmat
+                        <br />
+                        HQ2G+75H, Jl. Puri Bukit Depok
+                        <br />
+                        Ragajaya, Kecamatan Bojonggede
+                        <br />
+                        Kabupaten Bogor, Jawa Barat 16920
                       </p>
                     </div>
                   </div>
@@ -223,7 +229,7 @@ export default function ContactPage() {
                       <h3 className="text-lg font-semibold text-slate-900">
                         Telepon
                       </h3>
-                      <p className="text-slate-600">+62 123 4567 890</p>
+                      <p className="text-slate-600">083890558686</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">

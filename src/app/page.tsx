@@ -147,31 +147,47 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
+            {[
+              {
+                image: "/images/gallery/airmancur6.jpg",
+                title: "Air Mancur Premium",
+                description:
+                  "Air mancur beton premium dengan desain mewah untuk memperindah taman dan halaman Anda",
+              },
+              {
+                image: "/images/gallery/potbesarpancawarna.jpeg",
+                title: "Pot Besar Pancawarna",
+                description:
+                  "Pot beton ukuran besar dengan warna-warni yang menarik untuk taman Anda",
+              },
+              {
+                image: "/images/gallery/wastafelpancawarna.jpeg",
+                title: "Wastafel Terrazzo",
+                description:
+                  "Wastafel terrazzo dengan desain elegan dan warna yang cantik",
+              },
+            ].map((item, index) => (
               <motion.div
-                key={item}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: item * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-64">
                   <Image
-                    src={`/images/products/pot${item}.jpeg`}
-                    alt={`Product ${item}`}
+                    src={item.image}
+                    alt={item.title}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                    Pot Beton Premium
+                    {item.title}
                   </h3>
-                  <p className="text-slate-600 mb-4">
-                    Pot beton berkualitas tinggi dengan desain modern dan tahan
-                    lama
-                  </p>
+                  <p className="text-slate-600 mb-4">{item.description}</p>
                   <Link
                     href="/products"
                     className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium"
@@ -241,6 +257,220 @@ export default function Home() {
               >
                 Pelajari Lebih Lanjut
               </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Layanan Kami Section */}
+      <section className="py-20 bg-gradient-to-b from-emerald-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-teal-800 mb-4">
+              Layanan Kami
+            </h2>
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
+              Kami menyediakan berbagai layanan untuk memenuhi kebutuhan Anda,
+              mulai dari pembuatan pot custom, konsultasi desain, hingga
+              pengiriman ke seluruh Indonesia.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-teal-100 flex flex-col items-center text-center">
+              <svg
+                className="w-10 h-10 text-teal-600 mb-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 17v-2a4 4 0 018 0v2M5 10V7a7 7 0 0114 0v3M5 10a7 7 0 0014 0M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10"
+                />
+              </svg>
+              <h3 className="text-xl font-semibold text-teal-700 mb-2">
+                Custom Pot & Terrazzo
+              </h3>
+              <p className="text-slate-600">
+                Buat pot sesuai desain dan ukuran keinginan Anda, baik untuk
+                rumah, kantor, maupun proyek besar.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-teal-100 flex flex-col items-center text-center">
+              <svg
+                className="w-10 h-10 text-teal-600 mb-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H7a1 1 0 00-1 1v9m12 4h-4a4 4 0 01-8 0H3"
+                />
+              </svg>
+              <h3 className="text-xl font-semibold text-teal-700 mb-2">
+                Pengiriman Aman
+              </h3>
+              <p className="text-slate-600">
+                Layanan pengiriman ke seluruh Indonesia dengan packing aman dan
+                profesional.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-teal-100 flex flex-col items-center text-center">
+              <svg
+                className="w-10 h-10 text-teal-600 mb-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 10h.01M12 10h.01M16 10h.01M21 16v-2a4 4 0 00-3-3.87M3 16v-2a4 4 0 013-3.87m0 0A4 4 0 0112 4a4 4 0 016 6.13m-12 0A4 4 0 0012 4m0 0a4 4 0 016 6.13"
+                />
+              </svg>
+              <h3 className="text-xl font-semibold text-teal-700 mb-2">
+                Konsultasi & Support
+              </h3>
+              <p className="text-slate-600">
+                Tim kami siap membantu konsultasi desain, pemilihan produk, dan
+                kebutuhan proyek Anda.
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Link
+              href="/service"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-full font-semibold text-lg shadow hover:from-teal-700 hover:to-emerald-700 transition-all duration-300"
+            >
+              Lihat Layanan
+              <svg
+                className="ml-3 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Lokasi Kami Section */}
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Lokasi Kami
+            </h2>
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
+              Kunjungi workshop kami untuk melihat langsung proses pembuatan pot
+              beton
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg border border-teal-100"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-teal-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-teal-700 mb-2">
+                    Workshop Kami
+                  </h3>
+                  <p className="text-slate-600">
+                    Pangkalan Pot Rachmat
+                    <br />
+                    HQ2G+75H, Jl. Puri Bukit Depok
+                    <br />
+                    Ragajaya, Kecamatan Bojonggede
+                    <br />
+                    Kabupaten Bogor, Jawa Barat 16920
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://maps.app.goo.gl/z8Cat54pWNaGLsn67"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-white font-medium bg-gradient-to-r from-teal-600 to-emerald-600 rounded-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300"
+              >
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+                Buka di Google Maps
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative h-[400px] rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.0745879237529!2d106.77494390576834!3d-6.449320830064546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e92a1dd4b107%3A0x264e2d2028c538e1!2sPangkalan%20Pot%20Rachmat!5e1!3m2!1sid!2sid!4v1747029570801!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+              />
             </motion.div>
           </div>
         </div>

@@ -55,7 +55,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="text-2xl font-bold text-teal-400">
-                Rachmad Pot
+                POT RACHMAD
               </Link>
             </motion.div>
             <p className="text-slate-300 text-sm">

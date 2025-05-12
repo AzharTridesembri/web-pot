@@ -2,85 +2,157 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Data produk (nanti bisa dipindahkan ke file terpisah)
 const products = [
   {
-    id: 1,
-    name: "Pot Beton Modern",
-    description: "Desain modern dengan finishing halus dan tahan lama",
-    price: "Rp 150.000",
-    image: "/images/products/potterazzo.jpeg",
-    category: "Modern",
-    size: "Diameter 30cm x Tinggi 40cm",
-    weight: "5kg",
-    material: "Beton",
-    color: "Abu-abu",
-    finishing: "Doff",
+    category: "Pot Beton",
+    items: [
+      {
+        name: "Pot Beton Premium",
+        image: "/images/gallery/potbeton1.jpeg",
+        description: "Pot beton berkualitas tinggi dengan desain modern",
+        price: "Rp 150.000",
+        specifications: [
+          "Material: Beton berkualitas tinggi",
+          "Ukuran: 30x30x40 cm",
+          "Ketahanan: Tahan cuaca ekstrem",
+          "Warna: Abu-abu natural",
+          "Berat: 15 kg",
+        ],
+      },
+      {
+        name: "Pot Besar Pancawarna",
+        image: "/images/gallery/potbesarpancawarna.jpeg",
+        description: "Pot beton ukuran besar dengan warna-warni yang menarik",
+        price: "Rp 250.000",
+        specifications: [
+          "Material: Beton premium",
+          "Ukuran: 50x50x60 cm",
+          "Ketahanan: Tahan cuaca dan UV",
+          "Warna: Multi warna",
+          "Berat: 25 kg",
+        ],
+      },
+      {
+        name: "Pot Persegi",
+        image: "/images/gallery/potpersegi.jpeg",
+        description: "Pot beton dengan desain persegi yang elegan",
+        price: "Rp 180.000",
+        specifications: [
+          "Material: Beton berkualitas",
+          "Ukuran: 40x40x45 cm",
+          "Ketahanan: Tahan cuaca",
+          "Warna: Abu-abu",
+          "Berat: 18 kg",
+        ],
+      },
+    ],
   },
   {
-    id: 2,
-    name: "Pot Beton Klasik",
-    description: "Gaya klasik dengan detail yang elegan",
-    price: "Rp 175.000",
-    image: "/images/products/pot2.jpeg",
-    category: "Klasik",
-    size: "Diameter 25cm x Tinggi 35cm",
-    weight: "4kg",
-    material: "Beton",
-    color: "Abu-abu Natural",
-    finishing: "Doff",
+    category: "Terrazzo",
+    items: [
+      {
+        name: "Pot Terrazzo Premium",
+        image: "/images/gallery/potterazzo3.jpeg",
+        description: "Pot terrazzo dengan desain modern dan warna yang menarik",
+        price: "Rp 200.000",
+        specifications: [
+          "Material: Terrazzo premium",
+          "Ukuran: 35x35x45 cm",
+          "Ketahanan: Tahan cuaca dan goresan",
+          "Warna: Multi warna",
+          "Berat: 20 kg",
+        ],
+      },
+      {
+        name: "Terrazzo Hitam",
+        image: "/images/gallery/terazohitam.jpeg",
+        description: "Pot terrazzo dengan warna hitam yang elegan",
+        price: "Rp 175.000",
+        specifications: [
+          "Material: Terrazzo hitam",
+          "Ukuran: 30x30x40 cm",
+          "Ketahanan: Tahan cuaca",
+          "Warna: Hitam",
+          "Berat: 15 kg",
+        ],
+      },
+      {
+        name: "Terrazzo Bulat",
+        image: "/images/gallery/terazobulat.jpeg",
+        description: "Pot terrazzo dengan bentuk bulat yang unik",
+        price: "Rp 190.000",
+        specifications: [
+          "Material: Terrazzo premium",
+          "Ukuran: Diameter 40 cm",
+          "Ketahanan: Tahan cuaca",
+          "Warna: Multi warna",
+          "Berat: 18 kg",
+        ],
+      },
+    ],
   },
   {
-    id: 3,
-    name: "Pot Beton Minimalis",
-    description: "Desain minimalis yang cocok untuk berbagai ruangan",
-    price: "Rp 125.000",
-    image: "/images/products/pot3.jpeg",
-    category: "Minimalis",
-    size: "Diameter 20cm x Tinggi 25cm",
-    weight: "3kg",
-    material: "Beton",
-    color: "Abu-abu Muda",
-    finishing: "Doff",
+    category: "Wastafel",
+    items: [
+      {
+        name: "Wastafel Terrazzo Premium",
+        image: "/images/gallery/wastafelpancawarna.jpeg",
+        description:
+          "Wastafel terrazzo dengan desain modern dan warna yang cantik",
+        price: "Rp 1.500.000",
+        specifications: [
+          "Material: Terrazzo premium",
+          "Ukuran: 60x45x15 cm",
+          "Ketahanan: Tahan air dan goresan",
+          "Warna: Multi warna",
+          "Berat: 35 kg",
+        ],
+      },
+      {
+        name: "Wastafel Bulat Terrazzo",
+        image: "/images/gallery/wastafelbulatterazo.jpeg",
+        description: "Wastafel terrazzo dengan bentuk bulat yang elegan",
+        price: "Rp 1.200.000",
+        specifications: [
+          "Material: Terrazzo premium",
+          "Ukuran: Diameter 50 cm",
+          "Ketahanan: Tahan air",
+          "Warna: Multi warna",
+          "Berat: 30 kg",
+        ],
+      },
+    ],
   },
   {
-    id: 4,
-    name: "Pot Beton Artistik",
-    description: "Karya seni yang dapat menjadi pusat perhatian",
-    price: "Rp 200.000",
-    image: "/images/products/pot4.jpeg",
-    category: "Artistik",
-    size: "Diameter 35cm x Tinggi 45cm",
-    weight: "6kg",
-    material: "Beton",
-    color: "Abu-abu Tua",
-    finishing: "Tekstur",
-  },
-  {
-    id: 5,
-    name: "Pot Beton Kontemporer",
-    description: "Desain kontemporer dengan sentuhan modern",
-    price: "Rp 180.000",
-    image: "/images/products/pot5.jpeg",
-    category: "Kontemporer",
-    size: "Diameter 28cm x Tinggi 38cm",
-    weight: "4.5kg",
-    material: "Beton",
-    color: "Abu-abu",
-    finishing: "Polish",
-  },
-  {
-    id: 6,
-    name: "Pot Beton Tradisional",
-    description: "Gaya tradisional dengan nilai budaya",
-    price: "Rp 160.000",
-    image: "/images/products/pot6.jpeg",
-    category: "Tradisional",
-    size: "Diameter 32cm x Tinggi 42cm",
-    weight: "5.5kg",
-    material: "Beton",
-    color: "Abu-abu Antik",
-    finishing: "Natural",
+    category: "Air Mancur",
+    items: [
+      {
+        name: "Air Mancur Premium",
+        image: "/images/gallery/airmancur6.jpg",
+        description: "Air mancur beton premium dengan desain mewah",
+        price: "Rp 3.500.000",
+        specifications: [
+          "Material: Beton premium",
+          "Ukuran: 100x100x150 cm",
+          "Ketahanan: Tahan air dan cuaca",
+          "Warna: Abu-abu natural",
+          "Berat: 150 kg",
+        ],
+      },
+      {
+        name: "Air Mancur Kecil",
+        image: "/images/gallery/airmancur4.jpeg",
+        description: "Air mancur ukuran kecil untuk taman minimalis",
+        price: "Rp 2.000.000",
+        specifications: [
+          "Material: Beton berkualitas",
+          "Ukuran: 60x60x80 cm",
+          "Ketahanan: Tahan air",
+          "Warna: Abu-abu",
+          "Berat: 80 kg",
+        ],
+      },
+    ],
   },
 ];
 
@@ -88,138 +160,149 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-600 to-emerald-700 z-10" />
-        <motion.div
-          initial={{ scale: 1.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0"
-        >
-          <Image
-            src="/images/products-hero.jpg"
-            alt="Products"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
-        <div className="relative z-20 text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-          >
-            Produk Kami
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-teal-50 max-w-2xl mx-auto"
-          >
-            Temukan koleksi pot beton berkualitas tinggi dengan desain unik
-          </motion.p>
+      <section className="relative h-[300px] w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-700">
+          <div className="container mx-auto px-4 h-full flex items-center">
+            <div className="text-white">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl md:text-4xl font-bold mb-3"
+              >
+                Produk Kami
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg md:text-xl text-teal-50"
+              >
+                Koleksi Produk Pot Beton & Terrazzo Berkualitas
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Products Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Koleksi Terbaik
-            </h2>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              Setiap pot dibuat dengan teliti untuk memberikan kualitas terbaik
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-4"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {product.name}
-                    </h3>
-                    <span className="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">
-                      {product.category}
-                    </span>
-                  </div>
-                  <p className="text-slate-600 mb-4">{product.description}</p>
-                  <div className="text-sm text-slate-600 mb-2">
-                    <span className="font-semibold">Ukuran:</span>{" "}
-                    {product.size}
-                  </div>
-                  <div className="text-sm text-slate-600 mb-2">
-                    <span className="font-semibold">Berat:</span>{" "}
-                    {product.weight}
-                  </div>
-                  <div className="text-sm text-slate-600 mb-2">
-                    <span className="font-semibold">Material:</span>{" "}
-                    {product.material}
-                  </div>
-                  <div className="text-sm text-slate-600 mb-2">
-                    <span className="font-semibold">Warna:</span>{" "}
-                    {product.color}
-                  </div>
-                  <div className="text-sm text-slate-600 mb-4">
-                    <span className="font-semibold">Finishing:</span>{" "}
-                    {product.finishing}
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xl font-bold text-teal-700">
-                      {product.price}
-                    </span>
-                    <a
-                      href={`https://wa.me/6283890558686?text=${encodeURIComponent(
-                        `Halo admin, saya ingin memesan ${product.name} seharga ${product.price} (Ukuran: ${product.size}, Berat: ${product.weight}, Material: ${product.material}, Warna: ${product.color}, Finishing: ${product.finishing}). Berikut gambar produk: https://potrachmad.vercel.com${product.image}`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-lg font-medium shadow hover:from-teal-700 hover:to-emerald-700 transition-all"
-                    >
-                      Pesan Sekarang
-                      <svg
-                        className="ml-2 w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 10.5a8.38 8.38 0 01-.9 3.8l-1.1 2.2a2 2 0 01-1.8 1.1H7.7a2 2 0 01-1.8-1.1l-1.1-2.2A8.38 8.38 0 014 10.5V7a2 2 0 012-2h12a2 2 0 012 2v3.5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {products.map((category, categoryIndex) => (
+            <motion.div
+              key={category.category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: categoryIndex * 0.2 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-teal-800 mb-8">
+                {category.category}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {category.items.map((item, itemIndex) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: itemIndex * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  >
+                    <div className="relative h-64">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                        {item.name}
+                      </h3>
+                      <p className="text-slate-600 mb-4">{item.description}</p>
+                      <div className="space-y-2 mb-4">
+                        <h4 className="font-semibold text-teal-700">
+                          Spesifikasi:
+                        </h4>
+                        <ul className="list-disc list-inside text-slate-600 space-y-1">
+                          {item.specifications.map((spec, index) => (
+                            <li key={index}>{spec}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="mt-6">
+                        <span className="block text-xl font-bold text-teal-700 mb-4">
+                          {item.price}
+                        </span>
+                        <div className="flex flex-col md:flex-row gap-3 w-full">
+                          <a
+                            href={`https://wa.me/6283890558686?text=${encodeURIComponent(
+                              `Halo admin, saya ingin berkonsultasi tentang produk ${
+                                item.name
+                              }.\n\nSaya tertarik dengan spesifikasi berikut:\n${item.specifications.join(
+                                "\n"
+                              )}\n\nMohon informasi lebih detail dan penawaran harga yang terbaik. Terima kasih.`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex justify-center items-center px-4 py-2 bg-white border-2 border-teal-600 text-teal-600 rounded-lg font-medium shadow hover:bg-teal-50 transition-all w-full md:w-auto"
+                          >
+                            Tanya Produk
+                            <svg
+                              className="ml-2 w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </a>
+                          <a
+                            href={`https://wa.me/6283890558686?text=${encodeURIComponent(
+                              `Halo admin, saya ingin memesan ${
+                                item.name
+                              } seharga ${
+                                item.price
+                              }.\n\nSpesifikasi produk:\n${item.specifications.join(
+                                "\n"
+                              )}\n\nBerikut gambar produk: https://potrachmad.vercel.app${
+                                item.image
+                              }\n\nMohon konfirmasi ketersediaan dan detail pengiriman. Terima kasih.`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex justify-center items-center px-4 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-lg font-medium shadow hover:from-teal-700 hover:to-emerald-700 transition-all w-full md:w-auto"
+                          >
+                            Pesan Sekarang
+                            <svg
+                              className="ml-2 w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M21 10.5a8.38 8.38 0 01-.9 3.8l-1.1 2.2a2 2 0 01-1.8 1.1H7.7a2 2 0 01-1.8-1.1l-1.1-2.2A8.38 8.38 0 014 10.5V7a2 2 0 012-2h12a2 2 0 012 2v3.5z"
+                              />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </main>
