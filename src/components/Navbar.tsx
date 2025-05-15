@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,10 +62,20 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="relative px-2 py-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors duration-200 group"
+                    className={`relative px-2 py-1.5 text-sm font-medium transition-colors duration-200 group ${
+                      pathname === item.href
+                        ? "text-teal-600"
+                        : "text-slate-700 hover:text-teal-600"
+                    }`}
                   >
                     {item.title}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform ${
+                        pathname === item.href
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      } transition-transform duration-300`}
+                    />
                   </Link>
                 </motion.div>
               ))}
@@ -144,7 +156,11 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="block px-3 py-1.5 rounded-md text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 transition-colors duration-200"
+                    className={`block px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      pathname === item.href
+                        ? "text-teal-600 bg-slate-50"
+                        : "text-slate-700 hover:text-teal-600 hover:bg-slate-50"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
