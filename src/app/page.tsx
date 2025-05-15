@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 to-slate-800/20 z-10" />
 
@@ -22,7 +22,7 @@ export default function Home() {
             src="/images/pictures/logorachmadpot.png"
             alt="logo rachmad pot"
             fill
-            className="object-cover"
+            className="object-contain md:object-cover p-4 md:p-0"
             priority
           />
         </motion.div>
@@ -223,13 +223,13 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative h-[400px] rounded-2xl overflow-hidden"
+              className="relative min-h-[300px] md:h-[400px] rounded-2xl overflow-hidden"
             >
               <Image
                 src="/images/pictures/logorachmadpot.png"
                 alt="About Our Workshop"
                 fill
-                className="object-contain p-4"
+                className="object-contain p-4 md:p-8"
               />
             </motion.div>
 
@@ -459,7 +459,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-[400px] rounded-xl overflow-hidden shadow-lg"
+              className="relative min-h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.0745879237529!2d106.77494390576834!3d-6.449320830064546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e92a1dd4b107%3A0x264e2d2028c538e1!2sPangkalan%20Pot%20Rachmat!5e1!3m2!1sid!2sid!4v1747029570801!5m2!1sid!2sid"

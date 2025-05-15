@@ -96,24 +96,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
-              Support
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {footerLinks.support.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-base text-slate-300 hover:text-teal-400 transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Newsletter Section - REMOVE and REPLACE with address */}
           <div className="md:col-span-2">
             <h3 className="text-xl font-semibold text-teal-400 mb-2">
@@ -135,7 +117,7 @@ const Footer = () => {
         <div className="mt-12 border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-300 text-sm">
-              © {currentYear} Rachmad Pot. All rights reserved.
+              © {currentYear} POT RACHMAD. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               {footerLinks.legal.map((item) => (
