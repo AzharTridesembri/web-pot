@@ -7,9 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -25,6 +27,10 @@ const Navbar = () => {
     { title: "About", href: "/about" },
     { title: "Contact", href: "/contact" },
   ];
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <motion.nav
